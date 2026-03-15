@@ -17,10 +17,11 @@
         radial-gradient(circle at top, #4b1111 0%, #180909 35%, #080808 100%);
       min-height:100vh;
       padding:24px 14px 40px;
+      writing-mode: horizontal-tb;
     }
 
     .wrap{
-      max-width:980px;
+      max-width:1100px;
       margin:0 auto;
       display:grid;
       gap:20px;
@@ -40,19 +41,22 @@
       padding:22px 18px 24px;
       box-shadow:0 12px 30px rgba(0,0,0,0.35);
       backdrop-filter:blur(4px);
+      writing-mode: horizontal-tb;
     }
 
     h1{
       margin:0;
       font-size:30px;
       line-height:1.3;
+      writing-mode: horizontal-tb;
     }
 
     .sub{
       color:#dfd6d6;
       font-size:14px;
-      line-height:1.7;
+      line-height:1.8;
       margin-top:10px;
+      writing-mode: horizontal-tb;
     }
 
     .guide-wrap{
@@ -72,67 +76,97 @@
 
     .guide-dog{
       position:relative;
-      width:170px;
-      height:170px;
+      width:190px;
+      height:190px;
       margin:0 auto 8px;
     }
 
     .glow{
       position:absolute;
-      inset:18px;
+      inset:20px;
       border-radius:999px;
       background:rgba(255,255,255,0.08);
-      filter:blur(18px);
+      filter:blur(22px);
     }
 
     .dog-head{
       position:absolute;
       left:50%;
       top:50%;
-      width:100px;
-      height:116px;
-      transform:translate(-50%,-46%);
-      background:#111;
-      border-radius:48% 48% 44% 44%;
+      width:108px;
+      height:122px;
+      transform:translate(-50%,-44%);
+      background:linear-gradient(180deg,#1b1b1b 0%, #080808 100%);
+      border-radius:46% 46% 44% 44%;
       border:2px solid rgba(255,255,255,0.08);
+      box-shadow:inset 0 8px 14px rgba(255,255,255,0.05);
+      z-index:3;
+    }
+
+    .forehead-shine{
+      position:absolute;
+      left:50%;
+      top:42px;
+      width:36px;
+      height:20px;
+      transform:translateX(-50%);
+      background:rgba(255,255,255,0.06);
+      border-radius:50%;
+      filter:blur(5px);
+      z-index:4;
     }
 
     .ear-left,.ear-right{
       position:absolute;
-      width:34px;
-      height:58px;
-      background:#111;
-      top:24px;
+      width:38px;
+      height:72px;
+      background:linear-gradient(180deg,#1d1d1d 0%, #070707 100%);
+      top:22px;
       border:2px solid rgba(255,255,255,0.08);
-      border-radius:50%;
+      border-radius:55% 55% 48% 48%;
+      z-index:1;
     }
 
     .ear-left{
-      left:28px;
-      transform:rotate(-18deg);
+      left:36px;
+      transform:rotate(-16deg);
     }
 
     .ear-right{
-      right:28px;
-      transform:rotate(18deg);
+      right:36px;
+      transform:rotate(16deg);
     }
+
+    .ear-inner-left,.ear-inner-right{
+      position:absolute;
+      width:18px;
+      height:38px;
+      background:rgba(255,220,220,0.08);
+      top:14px;
+      border-radius:50%;
+    }
+
+    .ear-inner-left{ left:9px; }
+    .ear-inner-right{ right:9px; }
 
     .eye{
       position:absolute;
-      width:16px;
-      height:16px;
-      background:#fff;
+      width:18px;
+      height:18px;
+      background:#f8f8f8;
       border-radius:50%;
-      top:70px;
+      top:76px;
+      z-index:5;
+      box-shadow:0 0 4px rgba(255,255,255,0.15);
     }
 
-    .eye.left{ left:63px; }
-    .eye.right{ right:63px; }
+    .eye.left{ left:64px; }
+    .eye.right{ right:64px; }
 
     .pupil{
       position:absolute;
-      width:7px;
-      height:7px;
+      width:8px;
+      height:8px;
       background:#111;
       border-radius:50%;
       top:5px;
@@ -142,23 +176,51 @@
     .nose{
       position:absolute;
       left:50%;
-      top:97px;
-      width:26px;
-      height:18px;
+      top:101px;
+      width:28px;
+      height:20px;
       transform:translateX(-50%);
       background:#000;
       border-radius:50%;
+      z-index:6;
+      box-shadow:0 2px 4px rgba(255,255,255,0.08);
+    }
+
+    .muzzle{
+      position:absolute;
+      left:50%;
+      top:96px;
+      width:54px;
+      height:38px;
+      transform:translateX(-50%);
+      background:linear-gradient(180deg,#151515 0%, #090909 100%);
+      border-radius:40% 40% 55% 55%;
+      z-index:5;
+      opacity:0.95;
     }
 
     .mouth{
       position:absolute;
       left:50%;
-      top:118px;
-      width:34px;
-      height:16px;
+      top:122px;
+      width:38px;
+      height:18px;
       transform:translateX(-50%);
-      border-bottom:3px solid #fff;
-      border-radius:0 0 20px 20px;
+      border-bottom:3px solid #f2f2f2;
+      border-radius:0 0 22px 22px;
+      z-index:7;
+    }
+
+    .chin{
+      position:absolute;
+      left:50%;
+      top:132px;
+      width:28px;
+      height:10px;
+      transform:translateX(-50%);
+      background:rgba(255,255,255,0.04);
+      border-radius:50%;
+      z-index:4;
     }
 
     label{
@@ -167,6 +229,7 @@
       color:#e6dede;
       margin:10px 0 8px;
       text-align:left;
+      writing-mode: horizontal-tb;
     }
 
     input{
@@ -178,6 +241,7 @@
       background:rgba(255,255,255,0.12);
       color:white;
       font-size:16px;
+      writing-mode: horizontal-tb;
     }
 
     input::placeholder{
@@ -195,6 +259,7 @@
       font-size:16px;
       font-weight:bold;
       cursor:pointer;
+      writing-mode: horizontal-tb;
     }
 
     button:hover{
@@ -205,6 +270,7 @@
       font-size:28px;
       margin:0 0 12px;
       line-height:1.4;
+      writing-mode: horizontal-tb;
     }
 
     .section{
@@ -213,6 +279,7 @@
       border-radius:22px;
       padding:18px 16px;
       margin-top:14px;
+      writing-mode: horizontal-tb;
     }
 
     .section-title{
@@ -220,6 +287,7 @@
       font-weight:bold;
       color:#ffb9b9;
       margin-bottom:8px;
+      writing-mode: horizontal-tb;
     }
 
     .fortune-text{
@@ -227,6 +295,9 @@
       line-height:2;
       color:#f6eeee;
       font-size:15px;
+      text-align:left;
+      word-break:break-word;
+      writing-mode: horizontal-tb;
     }
 
     .empty{
@@ -238,6 +309,7 @@
       color:#ddd2d2;
       line-height:1.9;
       padding:20px;
+      writing-mode: horizontal-tb;
     }
 
     .chip{
@@ -249,6 +321,7 @@
       border-radius:999px;
       font-size:13px;
       margin-bottom:12px;
+      writing-mode: horizontal-tb;
     }
 
     .share-btn{
@@ -267,13 +340,16 @@
       <div class="guide-wrap">
         <div class="guide-dog">
           <div class="glow"></div>
-          <div class="ear-left"></div>
-          <div class="ear-right"></div>
+          <div class="ear-left"><div class="ear-inner-left"></div></div>
+          <div class="ear-right"><div class="ear-inner-right"></div></div>
           <div class="dog-head"></div>
+          <div class="forehead-shine"></div>
           <div class="eye left"><div class="pupil"></div></div>
           <div class="eye right"><div class="pupil"></div></div>
+          <div class="muzzle"></div>
           <div class="nose"></div>
           <div class="mouth"></div>
+          <div class="chin"></div>
         </div>
         <div class="guide-badge">黒いフレンチブルドックの案内犬</div>
       </div>
